@@ -151,4 +151,4 @@ batch_size=taLibs_getBatch_ViaGPU_Size(B)
 #     16:64,
 #     24:128}
 # batch_size=getBatch.taLibs_getBatch_ViaGPU_Size(B)
-# batch_size
+# batch_size 
