@@ -2,6 +2,7 @@
 # thisModel_Name='ASR-CN_CTC_tutorial_train_test'
 import glob, shutil, os 
 from os.path import join, exists
+import matplotlib.pyplot as plt
 import numpy as np
 try:
   import gpustat
