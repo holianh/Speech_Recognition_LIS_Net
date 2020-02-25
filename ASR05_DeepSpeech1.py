@@ -47,6 +47,7 @@ class ASR05_DeepSpeech1():
         self.opt_init()
         self.thisModel_Name="ASR05_DeepSpeech1"
         self.loss=[]
+        self.minloss=100000
 
     def _ctc_init(self):
         self.labels = Input(name='the_labels', shape=[None], dtype='float32')
