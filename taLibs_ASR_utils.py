@@ -57,7 +57,7 @@ class ASRutil():
     def save_model(self , myModel, comments='',loss=None, save_best_only=True):
         fnName='results/{}'.format(self.thisModel_Name)
         if save_best_only:
-            if self.minloss < np.mean(loss[-10:]):
+            if myModel.minloss < np.mean(loss[-10:]):
                 return
         myModel.minloss = np.mean(loss[-10:])
         myModel.ctc_model.save_weights(fnName + '.model')
