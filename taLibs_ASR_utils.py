@@ -13,7 +13,8 @@ import dateutil, datetime
 def tt(): return datetime.datetime.now(dateutil.tz.tzoffset(None, 7*60*60)) 
 # stime=tt().strftime('%Y-%m-%d  %H:%M:%S')   #'2020-02-23  00:08:27' 
 # stime
-
+Colab=False
+if exists('/content/sample_data/anscombe.json'):Colab=True
 class ASRutil():
     def __init__(self,thisModel_Name):
         self.SavingDir = "results/{}_results".format(thisModel_Name)
