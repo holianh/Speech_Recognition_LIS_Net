@@ -23,6 +23,7 @@ class ASRutil():
             Colab=True
             self.SavingDir = "drive/My Drive/Deeplearning/ASR---results/{}_results".format(thisModel_Name)
         if not exists('results'):os.makedirs('results')
+        if not exists("data/"): os.makedirs("data/")
         self.thisModel_Name=thisModel_Name
     def help(self):
         ss="""startCopy_models(source,dest): 
