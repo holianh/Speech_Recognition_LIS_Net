@@ -2,7 +2,7 @@
 # thisModel_Name='ASR-CN_CTC_tutorial_train_test'
 import glob, shutil, os 
 from os.path import join, exists
-inport numpy as np
+import numpy as np
 try:
   import gpustat
 except:
