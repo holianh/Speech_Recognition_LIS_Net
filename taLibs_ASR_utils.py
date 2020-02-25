@@ -90,11 +90,11 @@ class ASRutil():
 # import urllib.request  
 # import importlib
 
-url="https://github.com/holianh/Speech_Recognition_LIS_Net/raw/master/taLibs_ASR_utils.py"
-filename=url.split('/')[-1]
-print(filename) 
-filename, headers = urllib.request.urlretrieve(url,filename=filename) 
-from taLibs_ASR_utils import *
+# url="https://github.com/holianh/Speech_Recognition_LIS_Net/raw/master/taLibs_ASR_utils.py"
+# filename=url.split('/')[-1]
+# print(filename) 
+# filename, headers = urllib.request.urlretrieve(url,filename=filename) 
+# from taLibs_ASR_utils import *
 # importlib.reload(taLibs_ASR_utils)
 
 # stime=tt().strftime('%Y-%m-%d  %H:%M:%S')   #'2020-02-23  00:08:27' 
