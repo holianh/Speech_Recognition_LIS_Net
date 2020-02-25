@@ -21,10 +21,10 @@ class ASRutil():
             Colab=True
             self.SavingDir = "drive/My Drive/Deeplearning/ASR---results/{}_results".format(thisModel_Name)
         if not exists('results'):os.makedirs('results')
+        self.thisModel_Name=thisModel_Name
     def help(self):
-        ss="""
-        startCopy_models(source,dest): 
-              Remove all files in dest, copy files from source to dest
+        ss="""startCopy_models(source,dest): 
+        Remove all files in dest, copy files from source to dest
         load_model(myModel): 
               if Colab: copy from drive 2 local. Load model if esists
         save_model(myModel, comments='',loss=None, save_best_only=True): 
@@ -43,7 +43,7 @@ class ASRutil():
 
     def load_model(self,  myModel):
         """if Colab: copy from drive 2 local. Load model if esists"""
-        filename='results/{}'.format(thisModel_Name)
+        filename='results/{}'.format(self.thisModel_Name)
         if Colab:
             if not exists (filename + '.model') :
                 self.startCopy_models(dest = "results", source = self.SavingDir) 
@@ -53,7 +53,7 @@ class ASRutil():
         if exists(filename + '.loss.npy'):  myModel.loss=np.load(filename + '.loss.npy')
 
     def save_model(self , myModel, comments='',loss=None, save_best_only=True):
-        fnName='results/{}'.format(thisModel_Name)
+        fnName='results/{}'.format(self.thisModel_Name)
         if save_best_only:
             if self.minloss < np.mean(loss[-10:]):
                 return
@@ -69,7 +69,9 @@ class ASRutil():
         print('-'*60) 
 
     def plotLoss(self,loss,thisModel_Name, bottom=0, save=False):
-        if Colab:clear_output()
+        if Colab:
+            from IPython.display import clear_output
+            clear_output()
         loss_mean=np.zeros(len(loss))
         loss_mean[0]=loss[0]
         for k in range(1,len(loss)): loss_mean[k] = 0.95*loss_mean[k-1] + 0.05*loss[k]
